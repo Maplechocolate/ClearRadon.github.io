@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ClearRadon Rentals – Radon Monitor Rental in Canada</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Rent a digital radon monitor anywhere in Canada. Affordable 10–30 day rentals, fast shipping, clear instructions." />
+  <style>
+    :root {
+      --primary: #1f4b82;
+      --accent: #ffb347;
+      --bg: #f5f7fb;
+      --text: #222;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      background: white;
+      border-bottom: 1px solid #dde3f0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+    }
+    .logo {
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 0.03em;
+    }
+    .nav a {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: #444;
+      font-size: 0.95rem;
+    }
+    .nav a:hover { color: var(--primary); }
+
+    .hero {
+      padding: 3.5rem 0 2.5rem;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 2rem;
+      align-items: center;
+    }
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; }
+    }
+    .hero h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.75rem;
+      color: var(--primary);
+    }
+    .hero p.lead {
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+    }
+    .badge {
+      display: inline-block;
+      background: #e4edff;
+      color: var(--primary);
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      margin-bottom: 0.75rem;
+    }
+    .hero-cta {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      text-align: center;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+    .btn-primary:hover { background: #16365e; }
+    .btn-ghost {
+      background: transparent;
+      color: var(--primary);
+      border: 1px solid #c5d3ec;
+    }
+    .hero-note {
+      font-size: 0.85rem;
+      color: #555;
+      margin-top: 0.5rem;
+    }
+    .hero-card {
+      background: white;
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      box-shadow: 0 10px 25px rgba(15, 35, 70, 0.08);
+      font-size: 0.9rem;
+    }
+    .hero-card h2 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+    .hero-card ul {
+      list-style: none;
+      margin-top: 0.5rem;
+    }
+    .hero-card li {
+      margin-bottom: 0.35rem;
+    }
+
+    section {
+      padding: 2.5rem 0;
+    }
+    section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      .grid-3 { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: white;
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      box-shadow: 0 4px 12px rgba(15, 35, 70, 0.05);
+      font-size: 0.9rem;
+    }
+    .card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+    .muted {
+      color: #666;
+      font-size: 0.9rem;
+    }
+    .pricing-table {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+    @media (max-width: 768px) {
+      .pricing-table { grid-template-columns: 1fr; }
+    }
+    .price {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.25rem;
+    }
+    .pill {
+      display: inline-block;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      background: #f3f4ff;
+      color: #555;
+      margin-bottom: 0.4rem;
+    }
+    ul.list {
+      padding-left: 1.1rem;
+      margin-top: 0.4rem;
+      font-size: 0.9rem;
+    }
+    ul.list li { margin-bottom: 0.25rem; }
+
+    .faq-item {
+      margin-bottom: 1rem;
+    }
+    .faq-item h3 {
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .contact {
+      background: white;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      box-shadow: 0 6px 18px rgba(15, 35, 70, 0.06);
+    }
+    .contact label {
+      display: block;
+      font-size: 0.85rem;
+      margin-bottom: 0.25rem;
+      font-weight: 600;
+    }
+    .contact input,
+    .contact textarea,
+    .contact select {
+      width: 100%;
+      padding: 0.55rem 0.7rem;
+      border-radius: 0.4rem;
+      border: 1px solid #cbd5f0;
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+      font-family: inherit;
+    }
+    footer {
+      padding: 1.5rem 0 2rem;
+      font-size: 0.8rem;
+      color: #777;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">ClearRadon Rentals</div>
+      <nav>
+        <a href="#how">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#shipping">Shipping</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Book now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div>
+          <div class="badge">Canada-wide radon monitor rental</div>
+          <h1>Test your home for radon without buying a $179 device.</h1>
+          <p class="lead">
+            Rent a digital radon monitor for 10–30 days, get clear readings, and decide what to do next—without a big upfront cost.
+          </p>
+          <p class="muted">
+            Based in Ottawa • Shipping across Canada • U.S. rentals coming soon
+          </p>
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-primary">Book a rental</a>
+            <a href="#pricing" class="btn btn-ghost">View pricing</a>
+          </div>
+          <p class="hero-note">
+            Customer pays shipping both ways. This keeps rental prices low and fair for everyone.
+          </p>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h2>What you get</h2>
+        <ul>
+          <li>• Corentium Home digital radon monitor</li>
+          <li>• Fresh batteries installed</li>
+          <li>• Simple step‑by‑step instructions</li>
+          <li>• 10, 20, or 30‑day rental options</li>
+          <li>• Email support if you have questions</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="how">
+      <div class="container">
+        <h2>How it works</h2>
+        <div class="grid-3">
+          <div class="card">
+            <h3>1. Choose your rental</h3>
+            <p>Select 10, 20, or 30 days depending on how long you want to measure radon in your home.</p>
+          </div>
+          <div class="card">
+            <h3>2. We ship the monitor</h3>
+            <p>We ship from Ottawa with tracking. You pay shipping; we keep the rental price low.</p>
+          </div>
+          <div class="card">
+            <h3>3. Run your test</h3>
+            <p>Place the monitor in the main living area or bedroom and let it run for the rental period.</p>
+          </div>
+          <div class="card">
+            <h3>4. Read your results</h3>
+            <p>The screen shows your average radon level. We include a simple guide to interpret the numbers.</p>
+          </div>
+          <div class="card">
+            <h3>5. Return the device</h3>
+            <p>Ship it back with tracking using the carrier of your choice, or drop off locally in Ottawa.</p>
+          </div>
+          <div class="card">
+            <h3>6. Get your deposit back</h3>
+            <p>Once the monitor is back and checked, your security deposit is refunded within 48 hours.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="container">
+        <h2>Simple, transparent pricing</h2>
+        <p class="muted">
+          You only pay the rental fee + a refundable deposit. Shipping is paid by you at cost.
+        </p>
+        <div class="pricing-table">
+          <div class="card">
+            <span class="pill">Most popular</span>
+            <h3>10‑Day Rental</h3>
+            <div class="price">$20</div>
+            <p class="muted">Great for a standard radon test.</p>
+            <ul class="list">
+              <li>Digital radon monitor</li>
+              <li>Fresh batteries</li>
+              <li>Quick‑start guide</li>
+            </ul>
+          </div>
+          <div class="card">
+            <span class="pill">Extended</span>
+            <h3>20‑Day Rental</h3>
+            <div class="price">$30</div>
+            <p class="muted">Better for more stable long‑term readings.</p>
+            <ul class="list">
+              <li>All 10‑day features</li>
+              <li>Longer measurement period</li>
+            </ul>
+          </div>
+          <div class="card">
+            <span class="pill">Long‑term</span>
+            <h3>30‑Day Rental</h3>
+            <div class="price">$40</div>
+            <p class="muted">Ideal if you want to be extra sure.</p>
+            <ul class="list">
+              <li>All 20‑day features</li>
+              <li>Best for seasonal checks</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="margin-top:1.5rem;">
+          <h3>Security deposit</h3>
+          <p class="muted">
+            A refundable <strong>$50 deposit</strong> is required. It covers loss or damage and is refunded within 48 hours after the device is returned and inspected.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="shipping">
+      <div class="container">
+        <h2>Shipping & coverage</h2>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Canada‑wide shipping</h3>
+            <p>We ship from Ottawa to any province or territory in Canada using tracked parcel services.</p>
+          </div>
+          <div class="card">
+            <h3>You pay shipping</h3>
+            <p>Typical cost is $12–$18 each way within Canada, depending on your location and carrier.</p>
+          </div>
+          <div class="card">
+            <h3>U.S. rentals (coming soon)</h3>
+            <p>We’re planning to open rentals to the U.S. market. Join the waitlist in the form below.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <h2>Frequently asked questions</h2>
+        <div class="faq-item">
+          <h3>Why rent instead of buy?</h3>
+          <p class="muted">
+            A quality digital radon monitor costs around $179. Most people only need it once. Renting lets you test your home at a fraction of the cost.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>How accurate is the monitor?</h3>
+          <p class="muted">
+            The Corentium Home monitor is widely used by homeowners and professionals. It provides reliable average readings over time when used as directed.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>What if my radon level is high?</h3>
+          <p class="muted">
+            If your readings are above recommended guidelines, we’ll point you to trusted information and, where available, local mitigation professionals.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>Do you offer local pickup?</h3>
+          <p class="muted">
+            Yes. If you’re in the Ottawa area, you can arrange free pickup and drop‑off instead of shipping.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>What happens if the device is lost or damaged?</h3>
+          <p class="muted">
+            If the monitor is lost or returned damaged, the replacement cost (currently $179) may be charged, minus your deposit.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2>Book your rental</h2>
+        <p class="muted" style="margin-bottom:1rem;">
+          Fill out this form to request a rental. You’ll receive a confirmation email with payment and shipping details.
+        </p>
+        <div class="contact">
+          <!-- Replace this with your form handler (Formspree, Netlify Forms, etc.) -->
+          <form>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your full name" required />
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+
+            <label for="location">Location</label>
+            <input id="location" name="location" type="text" placeholder="City, Province/State" required />
+
+            <label for="rental">Rental length</label>
+            <select id="rental" name="rental">
+              <option value="10">10‑day rental – $20</option>
+              <option value="20">20‑day rental – $30</option>
+              <option value="30">30‑day rental – $40</option>
+            </select>
+
+            <label for="message">Anything else we should know?</label>
+            <textarea id="message" name="message" rows="4" placeholder="Preferred start date, special notes, local pickup request, etc."></textarea>
+
+            <button type="submit" class="btn btn-primary">Request my rental</button>
+          </form>
+          <p class="muted" style="margin-top:0.75rem;">
+            This form doesn’t process payment yet. We’ll reply with a confirmation, total cost, and payment link.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      ClearRadon Rentals • Based in Ottawa, Ontario • © <span id="year"></span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
